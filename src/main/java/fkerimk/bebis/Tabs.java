@@ -16,7 +16,7 @@ public class Tabs {
     public static void Register() {
 
         Register("bebis", Items.COOKIE, (parameters, output) -> {
-            output.accept(Blocks.CookieBlock);
+            output.accept(ModBlocks.CookieBlock);
         });
     }
 

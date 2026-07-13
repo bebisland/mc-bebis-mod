@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import java.util.function.Function;
 
-public class Blocks {
+public class ModBlocks {
 
     public static Block CookieBlock;
 

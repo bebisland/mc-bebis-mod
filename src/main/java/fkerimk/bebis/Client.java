@@ -8,6 +8,6 @@ public class Client implements ClientModInitializer {
 
     @Override public void onInitializeClient() {
 
-        EntityRenderers.register(Entities.Bebis, BebisRenderer::new);
+        EntityRenderers.register(ModEntities.Bebis, BebisRenderer::new);
     }
 }

@@ -1,6 +1,6 @@
 package fkerimk.bebis.data;
 
-import fkerimk.bebis.Blocks;
+import fkerimk.bebis.ModBlocks;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
@@ -13,7 +13,7 @@ public class ModelProvider extends FabricModelProvider {
 
     @Override public void generateBlockStateModels(@NonNull BlockModelGenerators blockModelGenerators) {
 
-        blockModelGenerators.createTrivialCube(Blocks.CookieBlock);
+        blockModelGenerators.createTrivialCube(ModBlocks.CookieBlock);
     }
 
     @Override public void generateItemModels(@NonNull ItemModelGenerators itemModelGenerators) {

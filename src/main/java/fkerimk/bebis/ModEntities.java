@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.EntityType;
 
 @SuppressWarnings({"unchecked", "DataFlowIssue", "SameParameterValue"})
-public class Entities {
+public class ModEntities {
 
     public static EntityType<BebisEntity> Bebis;
 

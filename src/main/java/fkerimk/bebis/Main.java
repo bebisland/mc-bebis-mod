@@ -26,8 +26,8 @@ public class Main implements ModInitializer {
 
 			// Registry
             Tabs.Register();
-            Blocks.Register();
-            Entities.Register();
+            ModBlocks.Register();
+            ModEntities.Register();
 
         } catch (Exception exception) {
 
