@@ -1,51 +1,35 @@
 package fkerimk.bebis;
 
+import fkerimk.bebis.base.Entity;
 import fkerimk.bebis.entity.BebisEntity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 
+@SuppressWarnings({"unchecked", "DataFlowIssue", "SameParameterValue"})
 public class Entities {
 
-    public static final EntityType<BebisEntity> BEBIS = register(
-        "bebis", BebisEntity::new,
-        MobCategory.CREATURE,
-        1f/16f*7f, 1f/16f*10f,
-        BebisEntity.createAttributes()
-    );
+    public static EntityType<BebisEntity> Bebis;
 
-    private static <T extends LivingEntity> EntityType<T> register(
-        String name,
-        EntityType.EntityFactory<T> factory,
-        MobCategory category,
-        float width,
-        float height,
-        AttributeSupplier.Builder attributes
-    ) {
-        Identifier id = Identifier.fromNamespaceAndPath(Main.MOD_ID, name);
-        ResourceKey<EntityType<?>> key = ResourceKey.create(Registries.ENTITY_TYPE, id);
+    @SuppressWarnings("SpellCheckingInspection") public static void Register() throws Exception {
 
-        EntityType<T> type = Registry.register(
-            BuiltInRegistries.ENTITY_TYPE,
-            key,
-            EntityType.Builder.of(factory, category)
-                .sized(width, height)
-                .build(key)
-        );
-
-        FabricDefaultAttributeRegistry.register(type, attributes);
-
-        return type;
+        Bebis = Register("bebis", BebisEntity::new, BebisEntity.class);
     }
 
-    public static void registerModEntities() {
-        Main.LOGGER.info("Registering entities");
+    private static <T extends Entity> EntityType<T> Register(String id, EntityType.EntityFactory<T> factory, Class<T> entityClass) throws Exception {
+
+        ResourceKey<EntityType<?>> key = ResourceKey.create(Registries.ENTITY_TYPE, Main.Id(id));
+
+        T dummyEntity = (T) Main.Unsafe.allocateInstance(entityClass);
+        dummyEntity.Setup();
+
+        var entityType = Registry.register(BuiltInRegistries.ENTITY_TYPE, key,EntityType.Builder.of(factory, dummyEntity.Category).sized(dummyEntity.Width, dummyEntity.Height).build(key));
+
+        FabricDefaultAttributeRegistry.register(entityType, dummyEntity.CreateAttributes());
+
+        return entityType;
     }
 }

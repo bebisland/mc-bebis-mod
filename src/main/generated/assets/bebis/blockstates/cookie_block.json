@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "bebis:block/cookie_block"
+    }
+  }
+}

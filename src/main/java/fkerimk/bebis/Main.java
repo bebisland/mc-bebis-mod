@@ -6,20 +6,37 @@ import net.minecraft.resources.Identifier;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import sun.misc.Unsafe;
 
 public class Main implements ModInitializer {
 
-	public static final String MOD_ID = "bebis";
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+	public static final String Id = "bebis";
+	public static final Logger Logger = LoggerFactory.getLogger(Id);
+	public static Unsafe Unsafe;
 
 	@Override
 	public void onInitialize() {
 
-		Entities.registerModEntities();
-	}
+        try {
 
-	public static Identifier id(String path) {
+			// Unsafe
+			var field = Unsafe.class.getDeclaredField("theUnsafe");
+			field.setAccessible(true);
+			Unsafe = (Unsafe)field.get(null);
 
-		return Identifier.fromNamespaceAndPath(MOD_ID, path);
+			// Registry
+            Tabs.Register();
+            Blocks.Register();
+            Entities.Register();
+
+        } catch (Exception exception) {
+
+            Logger.error("\uD83D\uDEA8\uD83C\uDF6A\uD83D\uDEA8{}", exception.getMessage(), exception);
+		}
+    }
+
+	public static Identifier Id(String path) {
+
+		return Identifier.fromNamespaceAndPath(Id, path);
 	}
 }

@@ -20,7 +20,7 @@
 			"fkerimk.bebis.Client"
 		],
 		"fabric-datagen": [
-			"fkerimk.bebis.BebisDataGenerator"
+			"fkerimk.bebis.Data"
 		]
 	},
 	"mixins": [
