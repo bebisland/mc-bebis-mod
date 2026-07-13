@@ -7,7 +7,7 @@ import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Bebis implements ModInitializer {
+public class Main implements ModInitializer {
 
 	public static final String MOD_ID = "bebis";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
@@ -15,7 +15,7 @@ public class Bebis implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
-
+		Entities.registerModEntities();
 	}
 
 	public static Identifier id(String path) {

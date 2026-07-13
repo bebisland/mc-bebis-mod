@@ -6,15 +6,18 @@
 	"description": "Adds Bebis to Minecraft!",
 	"authors": [ "fkerimk" ],
 	"contact": {
-		"homepage": "",
-		"sources": ""
+		"homepage": "https://github.com/bebisland/mc-bebis-mod",
+		"sources": "https://github.com/bebisland/mc-bebis-mod"
 	},
 	"license": "MIT-License",
 	"icon": "assets/bebis/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"fkerimk.bebis.Bebis"
+			"fkerimk.bebis.Main"
+		],
+		"client": [
+			"fkerimk.bebis.Client"
 		],
 		"fabric-datagen": [
 			"fkerimk.bebis.BebisDataGenerator"
