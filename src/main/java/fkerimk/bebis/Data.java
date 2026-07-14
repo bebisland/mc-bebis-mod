@@ -3,6 +3,7 @@ package fkerimk.bebis;
 import fkerimk.bebis.data.BlockLootTableProvider;
 import fkerimk.bebis.data.BlockTagsProvider;
 import fkerimk.bebis.data.ModelProvider;
+import fkerimk.bebis.data.RecipeProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import org.jspecify.annotations.NonNull;
@@ -16,5 +17,6 @@ public class Data implements DataGeneratorEntrypoint {
 		pack.addProvider(ModelProvider::new);
 		pack.addProvider(BlockTagsProvider::new);
 		pack.addProvider(BlockLootTableProvider::new);
+		pack.addProvider(RecipeProvider::new);
 	}
 }
