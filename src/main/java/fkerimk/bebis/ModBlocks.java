@@ -28,7 +28,7 @@ public class ModBlocks {
 
         Block block = function.apply(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, id)));
 
-        Registry.register(BuiltInRegistries.ITEM,id,new BlockItem(block, new Item.Properties().useBlockDescriptionPrefix().setId(ResourceKey.create(Registries.ITEM, id))));
+        Registry.register(BuiltInRegistries.ITEM, id, new BlockItem(block, new Item.Properties().useBlockDescriptionPrefix().setId(ResourceKey.create(Registries.ITEM, id))));
 
         return Registry.register(BuiltInRegistries.BLOCK, id, block);
     }

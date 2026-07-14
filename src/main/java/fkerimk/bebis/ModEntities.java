@@ -1,15 +1,18 @@
 package fkerimk.bebis;
 
-import fkerimk.bebis.base.Entity;
-import fkerimk.bebis.entity.BebisEntity;
+import fkerimk.bebis.base.ModEntity;
+import fkerimk.bebis.entities.BebisEntity;
+import fkerimk.bebis.entities.BebisRenderer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.EntityType;
 
-@SuppressWarnings({"unchecked", "DataFlowIssue", "SameParameterValue"})
+@SuppressWarnings({"unchecked", "DataFlowIssue", "SameParameterValue", "rawtypes"})
 public class ModEntities {
 
     public static EntityType<BebisEntity> Bebis;
@@ -19,7 +22,12 @@ public class ModEntities {
         Bebis = Register("bebis", BebisEntity::new, BebisEntity.class);
     }
 
-    private static <T extends Entity> EntityType<T> Register(String id, EntityType.EntityFactory<T> factory, Class<T> entityClass) throws Exception {
+    public static void RegisterClient (){
+
+        RegisterClient(Bebis, BebisRenderer::new);
+    }
+
+    private static <T extends ModEntity> EntityType<T> Register(String id, EntityType.EntityFactory<T> factory, Class<T> entityClass) throws Exception {
 
         ResourceKey<EntityType<?>> key = ResourceKey.create(Registries.ENTITY_TYPE, Main.Id(id));
 
@@ -31,5 +39,10 @@ public class ModEntities {
         FabricDefaultAttributeRegistry.register(entityType, dummyEntity.CreateAttributes());
 
         return entityType;
+    }
+
+    public static void RegisterClient (EntityType entityType, EntityRendererProvider renderer) {
+
+        EntityRenderers.register(entityType, renderer);
     }
 }

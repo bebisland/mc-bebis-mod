@@ -17,6 +17,7 @@ public class Tabs {
 
         Register("bebis", Items.COOKIE, (parameters, output) -> {
             output.accept(ModBlocks.CookieBlock);
+            output.accept(ModFluids.Milk.Bucket);
         });
     }
 

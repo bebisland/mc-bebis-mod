@@ -1,18 +1,18 @@
-package fkerimk.bebis.entity;
+package fkerimk.bebis.entities;
 
 import com.geckolib.animation.AnimationController;
 import com.geckolib.animation.state.AnimationTest;
 import com.geckolib.animation.object.PlayState;
 import com.geckolib.animation.RawAnimation;
 import com.geckolib.animatable.manager.AnimatableManager;
-import fkerimk.bebis.base.Entity;
+import fkerimk.bebis.base.ModEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jspecify.annotations.NonNull;
 
-public class BebisEntity extends Entity {
+public class BebisEntity extends ModEntity {
 
     @Override public void Setup() {
 

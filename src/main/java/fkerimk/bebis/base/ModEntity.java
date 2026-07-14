@@ -19,7 +19,7 @@ import net.minecraft.world.level.Level;
 import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.Nullable;
 
-public abstract class Entity extends Animal implements GeoEntity {
+public abstract class ModEntity extends Animal implements GeoEntity {
 
     public MobCategory Category;
     public float MaxHealth;
@@ -38,7 +38,7 @@ public abstract class Entity extends Animal implements GeoEntity {
         TemptRange = 8f;
     }
 
-    protected Entity(EntityType<? extends Animal> type, Level level) { super(type, level); }
+    protected ModEntity(EntityType<? extends Animal> type, Level level) { super(type, level); }
 
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 
