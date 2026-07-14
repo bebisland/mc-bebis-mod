@@ -2,6 +2,8 @@ package fkerimk.bebis.mixin;
 
 import fkerimk.bebis.ModFluids;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.advancements.triggers.CriteriaTriggers;
 import net.minecraft.world.InteractionHand;
@@ -55,6 +57,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
         if (!level.setBlock(targetPos, milk.defaultFluidState().createLegacyBlock(), 11)) return;
 
+        level.playSound(null, targetPos, SoundEvents.BUCKET_EMPTY, SoundSource.BLOCKS, 1.0F, 1.0F);
+        
         player.awardStat(Stats.ITEM_USED.get((Item) (Object) this));
 
         if (player instanceof ServerPlayer serverPlayer)
