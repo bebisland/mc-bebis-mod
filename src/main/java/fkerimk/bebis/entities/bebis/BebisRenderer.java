@@ -1,4 +1,4 @@
-package fkerimk.bebis.entities;
+package fkerimk.bebis.entities.bebis;
 
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;

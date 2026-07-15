@@ -1,7 +1,7 @@
-package fkerimk.bebis;
+package fkerimk.bebis.fluids;
 
+import fkerimk.bebis.Main;
 import fkerimk.bebis.base.ModFluid;
-import fkerimk.bebis.fluids.MilkFluid;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderingRegistry;
 import net.minecraft.client.renderer.block.FluidModel;
 import net.minecraft.client.resources.model.sprite.Material;

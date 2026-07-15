@@ -1,6 +1,6 @@
 package fkerimk.bebis.mixin;
 
-import fkerimk.bebis.ModFluids;
+import fkerimk.bebis.fluids.ModFluids;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.fog.FogRenderer;

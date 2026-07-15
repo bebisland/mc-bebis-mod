@@ -1,6 +1,6 @@
 package fkerimk.bebis.data;
 
-import fkerimk.bebis.ModBlocks;
+import fkerimk.bebis.blocks.ModBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
 import net.minecraft.core.HolderLookup;

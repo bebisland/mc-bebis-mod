@@ -1,6 +1,6 @@
 package fkerimk.bebis.mixin;
 
-import fkerimk.bebis.ModFluids;
+import fkerimk.bebis.fluids.ModFluids;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.material.FluidState;

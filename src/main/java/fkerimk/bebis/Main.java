@@ -1,5 +1,10 @@
 package fkerimk.bebis;
 
+import fkerimk.bebis.blocks.ModBlocks;
+import fkerimk.bebis.entities.ModEntities;
+import fkerimk.bebis.fluids.ModFluids;
+import fkerimk.bebis.item_groups.ItemGroups;
+import fkerimk.bebis.items.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.resources.Identifier;
@@ -25,10 +30,11 @@ public class Main implements ModInitializer {
 			Unsafe = (Unsafe)field.get(null);
 
 			// Registry
-            Tabs.Register();
+            ModEntities.Register();
+			ModItems.Register();
             ModBlocks.Register();
             ModFluids.Register();
-            ModEntities.Register();
+            ItemGroups.Register();
 
         } catch (Exception exception) {
 

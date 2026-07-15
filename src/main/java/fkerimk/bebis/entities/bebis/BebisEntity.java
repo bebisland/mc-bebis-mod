@@ -1,4 +1,4 @@
-package fkerimk.bebis.entities;
+package fkerimk.bebis.entities.bebis;
 
 import com.geckolib.animation.AnimationController;
 import com.geckolib.animation.state.AnimationTest;

@@ -1,5 +1,10 @@
 {
-    "inventory.bebis.bebis": "Bebis",
+    "itemGroup.bebis.bebis": "Bebis",
 
-    "block.bebis.cookie_block": "Cookie Block"
+    "item.bebis.bebis": "Bebis",
+    "item.bebis.bebis_spawn_egg": "Bebis Spawn Egg",
+
+    "block.bebis.cookie_block": "Cookie Block",
+
+    "entity.bebis.bebis": "Bebis"
 }

@@ -1,4 +1,4 @@
-package fkerimk.bebis.entities;
+package fkerimk.bebis.entities.bebis;
 
 import fkerimk.bebis.Main;
 import net.minecraft.resources.Identifier;

@@ -1,6 +1,6 @@
 package fkerimk.bebis.base;
 
-import fkerimk.bebis.ModFluids.*;
+import fkerimk.bebis.fluids.ModFluids.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;

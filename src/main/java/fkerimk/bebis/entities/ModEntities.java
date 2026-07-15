@@ -1,8 +1,9 @@
-package fkerimk.bebis;
+package fkerimk.bebis.entities;
 
+import fkerimk.bebis.Main;
 import fkerimk.bebis.base.ModEntity;
-import fkerimk.bebis.entities.BebisEntity;
-import fkerimk.bebis.entities.BebisRenderer;
+import fkerimk.bebis.entities.bebis.BebisEntity;
+import fkerimk.bebis.entities.bebis.BebisRenderer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.EntityRenderers;
