@@ -1,6 +1,7 @@
 package fkerimk.bebis.data;
 
 import fkerimk.bebis.blocks.ModBlocks;
+import fkerimk.bebis.fluids.ModFluids;
 import fkerimk.bebis.items.ModItems;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
@@ -22,5 +23,7 @@ public class ModelProvider extends FabricModelProvider {
 
         itemModelGenerators.generateFlatItem(ModItems.Bebis, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.BebisSpawnEgg, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModFluids.ChocolateMilk.Bucket, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModFluids.StrawberryMilk.Bucket, ModelTemplates.FLAT_ITEM);
     }
 }

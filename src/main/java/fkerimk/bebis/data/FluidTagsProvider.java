@@ -17,5 +17,11 @@ public class FluidTagsProvider extends FabricTagsProvider.FluidTagsProvider {
 
         builder(FluidTags.WATER).add(BuiltInRegistries.FLUID.getResourceKey(ModFluids.Milk.Source).orElseThrow());
         builder(FluidTags.WATER).add(BuiltInRegistries.FLUID.getResourceKey(ModFluids.Milk.Flowing).orElseThrow());
+
+        builder(FluidTags.WATER).add(BuiltInRegistries.FLUID.getResourceKey(ModFluids.ChocolateMilk.Source).orElseThrow());
+        builder(FluidTags.WATER).add(BuiltInRegistries.FLUID.getResourceKey(ModFluids.ChocolateMilk.Flowing).orElseThrow());
+
+        builder(FluidTags.WATER).add(BuiltInRegistries.FLUID.getResourceKey(ModFluids.StrawberryMilk.Source).orElseThrow());
+        builder(FluidTags.WATER).add(BuiltInRegistries.FLUID.getResourceKey(ModFluids.StrawberryMilk.Flowing).orElseThrow());
     }
 }

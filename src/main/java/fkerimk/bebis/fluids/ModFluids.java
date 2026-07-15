@@ -21,16 +21,15 @@ import java.util.function.Supplier;
 
 public class ModFluids {
 
-    public static FluidReg Milk;
-
-    public static void Register () {
-
-        Milk = Register("milk", 7, MilkFluid.Source::new, MilkFluid.Flowing::new, Items.MILK_BUCKET);
-    }
+    public static FluidReg Milk = Register("milk", 7, MilkFluid.Source::new, MilkFluid.Flowing::new, Items.MILK_BUCKET);
+    public static FluidReg ChocolateMilk = Register("chocolate_milk", 7, MilkFluid.Source::new, MilkFluid.Flowing::new, null);
+    public static FluidReg StrawberryMilk = Register("strawberry_milk", 7, MilkFluid.Source::new, MilkFluid.Flowing::new, null);
 
     public static void RegisterClient (){
 
         RegisterClient(Milk);
+        RegisterClient(ChocolateMilk);
+        RegisterClient(StrawberryMilk);
     }
 
     public static <T extends ModFluid> FluidReg Register( String name, int tickDelay, Supplier<T> sourceFactory, Supplier<T> flowingFactory, Item bucketItem) {
@@ -77,6 +76,8 @@ public class ModFluids {
 
         FluidRenderingRegistry.register(reg.Source, reg.Flowing, new FluidModel.Unbaked(sourceMaterial, flowingMaterial, null, null));
     }
+
+    public static void Register () { }
 
     public static final class FluidReg {
 

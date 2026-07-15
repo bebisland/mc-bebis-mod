@@ -1,6 +1,10 @@
 {
   "values": [
     "bebis:milk_fluid_source",
-    "bebis:milk_fluid_flowing"
+    "bebis:milk_fluid_flowing",
+    "bebis:chocolate_milk_fluid_source",
+    "bebis:chocolate_milk_fluid_flowing",
+    "bebis:strawberry_milk_fluid_source",
+    "bebis:strawberry_milk_fluid_flowing"
   ]
 }

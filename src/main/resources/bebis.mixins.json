@@ -3,10 +3,9 @@
 	"package": "fkerimk.bebis.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
-		"ExampleMixin",
 		"MilkBucketMixin",
-		"MilkFogMixin",
-		"MilkSplashMixin"
+        "FluidFogMixin",
+		"FluidSplashMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

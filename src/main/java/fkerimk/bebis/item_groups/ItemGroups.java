@@ -22,6 +22,8 @@ public class ItemGroups {
 
             output.accept(ModBlocks.CookieBlock);
             output.accept(ModFluids.Milk.Bucket);
+            output.accept(ModFluids.ChocolateMilk.Bucket);
+            output.accept(ModFluids.StrawberryMilk.Bucket);
             output.accept(ModItems.Bebis);
             output.accept(ModItems.BebisSpawnEgg);
         });
@@ -29,6 +31,12 @@ public class ItemGroups {
         Register(CreativeModeTabs.NATURAL_BLOCKS, output ->  {
 
             output.accept(ModBlocks.CookieBlock);
+        });
+
+        Register(CreativeModeTabs.FOOD_AND_DRINKS, output ->  {
+
+            output.accept(ModFluids.ChocolateMilk.Bucket);
+            output.accept(ModFluids.StrawberryMilk.Bucket);
         });
 
         Register(CreativeModeTabs.INGREDIENTS, output ->  {

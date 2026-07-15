@@ -3,7 +3,6 @@ package fkerimk.bebis.mixin;
 import fkerimk.bebis.fluids.ModFluids;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.AABB;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -13,25 +12,29 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.jspecify.annotations.Nullable;
 
 @Mixin(Entity.class)
-public abstract class MilkSplashMixin {
+public abstract class FluidSplashMixin {
 
     @Shadow public abstract net.minecraft.world.level.Level level();
     @Shadow public abstract @Nullable AABB getFluidInteractionBox();
 
     @Inject(method = "doWaterSplashEffect", at = @At("HEAD"), cancellable = true)
-    private void bebis$noMilkSplash(CallbackInfo ci) {
+    private void bebis$noFluidSplash(CallbackInfo callback) {
 
-        AABB box = this.getFluidInteractionBox();
+        var box = this.getFluidInteractionBox();
 
         if (box == null) return;
 
-        boolean touchingMilk = BlockPos.betweenClosedStream(box).anyMatch(pos -> {
+        var touching = BlockPos.betweenClosedStream(box).anyMatch(pos -> {
 
-            FluidState fluidState = this.level().getFluidState(pos);
+            var fluidState = this.level().getFluidState(pos);
             var type = fluidState.getType();
-            return type == ModFluids.Milk.Source || type == ModFluids.Milk.Flowing;
+
+            return
+                type == ModFluids.Milk.Source || type == ModFluids.Milk.Flowing ||
+                type == ModFluids.ChocolateMilk.Source || type == ModFluids.ChocolateMilk.Flowing ||
+                type == ModFluids.StrawberryMilk.Source || type == ModFluids.StrawberryMilk.Flowing;
         });
 
-        if (touchingMilk) ci.cancel();
+        if (touching) callback.cancel();
     }
 }
