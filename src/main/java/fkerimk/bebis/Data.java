@@ -14,6 +14,7 @@ public class Data implements DataGeneratorEntrypoint {
 		pack.addProvider(ModelProvider::new);
 		pack.addProvider(BlockTagsProvider::new);
 		pack.addProvider(BlockLootTableProvider::new);
+		pack.addProvider(EntityLootTableProvider::new);
 		pack.addProvider(RecipeProvider::new);
 		pack.addProvider(FluidTagsProvider::new);
 	}
